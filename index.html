@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>CubeIDEからGDBで吐いたuint8_tのバイナリ配列をフォーマットくん</title>
+    <meta name="description" content="改行入れます">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo_very_small.png">
+</head>
+
+<body>
+    <h1>CubeIDEからGDBで吐いたuint8_tのバイナリ配列をフォーマットくん</h1>
+
+    <p>CubeIDEのDebugger Console下記コマンドを実行後，できたログの"$x = {0xFF" ~...}の部分をコピペしてください。</p>
+    <div id="code_area" >
+        # arrには中身を見たい配列名，arr_lengthは長さを入力してください <br>
+        set print elements 0        <br>
+        set logging file hoge.log   <br>
+        set logging on              <br>
+        p/x arr[0]@arr_length       <br>
+        set logging off             
+    </div>
+
+    <br>
+
+    <input type="checkbox" id="" checked="checked">出力の修飾子(0x)を削除</input>
+
+    <form>
+    <p>入力</p>
+    <textarea id="input_area" placeholder="ここに入力"></textarea>
+    <br>
+    <textarea id="width_setting" placeholder="改行する幅を入力"></textarea >
+    <button type="button" id="transform_button" onclick="break_line()">改行</button>
+    <p>出力</p>
+    <textarea id="output_area"></textarea>
+    </form>>
+
+    <script src="script.js"></script>
+    <a href='https://github.com/walk-to-work/Binary_Formatter_For_CubeIDE_GDB'>コードはこちら</a>
+</body>
+</html>
